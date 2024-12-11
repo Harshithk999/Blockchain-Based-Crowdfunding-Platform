@@ -176,7 +176,7 @@ Next Steps
 
 
 ## Queries
-- For queries,email harshithkotian999@example.com
+- For queries, email harshithkotian999@gmail.com
   
 Note: This project is for educational purposes. Use only test ETH for development.
 
