@@ -1,0 +1,5208 @@
+/* Base Variables */
+:root {
+  --primary-color: #3498db;
+  --primary-dark: #2980b9;
+  --background: #f5f5f5;
+  --white: #ffffff;
+  --text-dark: #2c3e50;
+  --text-light: #7f8c8d;
+  --border: #e0e0e0;
+  --shadow: 0 2px 4px rgba(0,0,0,0.1);
+  --success: #2ecc71;
+  --error: #e74c3c;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--background);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navigation */
+.nav-bar {
+  background: var(--white);
+  box-shadow: var(--shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: var(--background);
+}
+
+.nav-links .nav-button {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-links .nav-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: var(--white);
+  text-align: center;
+  margin-top: 70px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Buttons */
+.cta-button {
+  background: var(--white);
+  color: var(--primary-color);
+  padding: 15px 30px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.secondary-button {
+  border: 2px solid var(--white);
+  color: var(--white);
+  padding: 15px 30px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+  background: var(--white);
+  color: var(--primary-color);
+}
+
+/* Auth Pages */
+.auth-page {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  margin-top: 70px;
+}
+
+.auth-container {
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-header h1 {
+  font-size: 24px;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.auth-header p {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+.form-select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: var(--white);
+  color: var(--text-dark);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+.form-select:hover {
+  border-color: var(--primary-color);
+}
+
+.form-select option {
+  padding: 12px;
+  font-size: 14px;
+}
+
+/* Sections */
+.section {
+  padding: 80px 0;
+}
+
+.section-gray {
+  background: #f8f9fa;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.section-header p {
+  color: var(--text-light);
+  font-size: 18px;
+}
+
+/* Steps Grid */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.step-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.step-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Form Submit Button */
+.form-submit {
+  background: var(--primary-color);
+  color: var(--white);
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-submit:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  margin-bottom: 80px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.stat-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-top: 10px;
+}
+
+/* Footer */
+.footer {
+  background: var(--text-dark);
+  color: var(--white);
+  padding: 60px 0 30px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-brand p {
+  margin-top: 15px;
+  opacity: 0.8;
+}
+
+.footer-links h4 {
+  margin-bottom: 20px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links a {
+  color: var(--white);
+  opacity: 0.8;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.footer-bottom {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* Auth Footer */
+.auth-footer {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.auth-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Messages */
+.error-message {
+  background: #fee;
+  color: var(--error);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: center;
+  display: none;
+}
+
+.success-message {
+  background: #efe;
+  color: var(--success);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: center;
+  display: none;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: var(--white);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* Loading States */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: var(--text-light);
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid var(--border);
+  border-top: 3px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      padding: 0 15px;
+  }
+
+  .hero-content h1 {
+      font-size: 36px;
+  }
+
+  .hero-content p {
+      font-size: 18px;
+  }
+
+  .steps-grid,
+  .stats-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+      grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  .section {
+      padding: 60px 0;
+  }
+
+  .nav-links {
+      gap: 15px;
+  }
+
+  .auth-container {
+      margin: 20px;
+      padding: 30px;
+  }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 10px; }
+.mt-2 { margin-top: 20px; }
+.mb-1 { margin-bottom: 10px; }
+.mb-2 { margin-bottom: 20px; }
+.hidden { display: none; }
+
+/* Campaign Card Specific Styles */
+.campaign-card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.campaign-card:hover {
+  transform: translateY(-5px);
+}
+
+.campaign-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 15px;
+}
+
+.campaign-card h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.campaign-card .campaign-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.campaign-card .campaign-stats h4 {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-bottom: 5px;
+}
+
+.campaign-card .campaign-stats p {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.campaign-card .campaign-footer {
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.campaign-card .time-left {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.campaign-card .view-details {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+#empty-state {
+  padding: 60px 0;
+}
+
+#empty-state h2 {
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+#empty-state p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+/* Create Campaign Specific Styles */
+.form-section {
+  margin-bottom: 40px;
+}
+
+.form-section h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+textarea.form-select {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-hint {
+  display: block;
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 6px;
+}
+
+.image-preview {
+  margin-top: 15px;
+  max-width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.info-box {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.info-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.info-box p {
+  color: var(--text-light);
+  text-align: center;
+}
+
+.info-box .steps-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 30px 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .info-box .steps-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* Update these styles in your styles.css file */
+
+.section {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 70px - 200px); /* Adjusted for header and hero section */
+}
+
+.create-campaign-container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 60px;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.form-section {
+  margin-bottom: 40px;
+}
+
+.form-section h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+/* Campaign Description Textarea */
+#campaign-description {
+  min-height: 200px;
+  padding: 15px;
+  resize: vertical;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Milestone System Box */
+.step-card.info-box {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 40px;
+  margin: 40px auto;
+  width: 100%;
+  text-align: center;
+}
+
+.step-card .steps-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 30px auto;
+  flex-wrap: nowrap;
+  padding: 0;
+  max-width: 900px;
+}
+
+.step-card .stat-card {
+  flex: 1;
+  background: var(--white);
+  padding: 25px 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  min-width: 180px;
+  transition: transform 0.3s ease;
+}
+
+.step-card .stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.step-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.step-card .stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: block;
+  margin: 10px 0;
+}
+
+.step-card .stat-label {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+/* Create Campaign Button */
+.btn.primary-btn {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 15px 40px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+  margin: 30px auto 0;
+  display: block;
+}
+
+.btn.primary-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+/* Form inputs and labels */
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.form-group input:not([type="file"]) {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+.form-hint {
+  display: block;
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 6px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .create-campaign-container {
+      padding: 30px;
+      margin: 0 20px;
+  }
+
+  .step-card .steps-grid {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  
+  .step-card .stat-card {
+      min-width: 200px;
+      flex: 0 0 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .create-campaign-container {
+      padding: 20px;
+  }
+  
+  .step-card.info-box {
+      padding: 20px;
+  }
+  
+  .step-card .stat-card {
+      flex: 0 0 100%;
+  }
+
+  .btn.primary-btn {
+      max-width: 100%;
+  }
+}
+
+/* Modal Styles - Add these at the end of your existing CSS */
+/* Base Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal.show,
+.modal[style*="display: flex"],
+#success-modal.show,
+#investment-modal.show,
+.modal.active {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+#success-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: modalPop 0.3s ease-out;
+}
+#success-modal .modal-content {
+  max-width: 400px;
+  background: var(--white);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  animation: modalPop 0.3s ease-out;
+}
+
+/* Investment Modal Specific */
+#investment-modal .modal-content {
+  max-width: 450px;
+}
+
+/* Vote Success Modal Specific */
+.vote-success-modal .modal-content {
+  max-width: 400px;
+}
+/* Keep all your existing modal styles as they are */
+
+/* Add these specific styles for the create campaign success modal */
+#div-success-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+#div-success-modal.show {
+  display: flex !important;
+}
+
+#div-success-modal .modal-content {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  animation: modalPop 0.3s ease-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  margin: auto;
+}
+
+#div-success-modal .success-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--success);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: 0 auto 20px;
+  animation: iconScale 0.5s ease-out;
+}
+.success-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--success);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: 0 auto 20px;
+  animation: iconScale 0.5s ease-out;
+}
+@keyframes iconScale {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* Modal Animations */
+@keyframes modalPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+#success-modal.show {
+  display: flex;
+}
+/* Responsive adjustment for modal */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%;
+    padding: 30px 20px;
+    margin: 20px;
+  }
+}
+
+/* Creator Dashboard Styles */
+.dashboard-stats {
+  margin-bottom: 40px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+.campaigns-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Force 3 columns */
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.campaign-box {
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  width: 100%;  /* Let it fill the grid cell */
+  margin: 0;    /* Remove any margin */
+}
+
+.campaign-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.campaign-image {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;  /* 16:9 aspect ratio */
+}
+
+.campaign-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.campaign-status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.campaign-status.active {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.campaign-status.ended {
+  background-color: var(--text-light);
+  color: var(--white);
+}
+.campaign-status.funded {
+  background-color: #FFD700; /* Yellow */
+  color: #333;
+}
+.campaign-status.funded:hover {
+  background-color: #FFC700;
+}
+.campaign-status {
+  transition: background-color 0.3s ease;
+}
+.campaign-content {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.campaign-content h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.campaign-description {
+  color: var(--text-dark);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  white-space: pre-line;
+  /* Text truncation - cross browser compatible */
+  overflow: hidden;
+  padding: 20px 0;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /*-webkit-line-clamp: 2;*/
+  max-height: 2.8em; /* fallback for non-webkit browsers: 2 lines x 1.4 line height */
+  position: relative;
+}
+
+@supports not (-webkit-line-clamp: 2) {
+  .campaign-description::after {
+      content: '...';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background: var(--white);
+      padding-left: 4px;
+  }
+}
+.campaign-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.stat .value {
+  font-size: 16px; /* Slightly smaller font */
+}
+.campaign-stats .stat {
+  text-align: center;
+}
+
+.campaign-stats .label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-light);
+  margin-bottom: 5px;
+}
+
+.campaign-stats .value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.campaign-progress {
+  margin: 15px 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary-color);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 12px;
+  color: var(--text-light);
+  text-align: right;
+}
+.milestone-progress {
+  margin: 30px 0;
+  padding: 20px 0;
+  position: relative;
+}
+.milestone-progress::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  top: 50%;
+  height: 2px;
+  background: var(--border);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .milestone-progress {
+    padding: 15px 0;
+  }
+  
+  .milestone-progress::before {
+    left: 20px;
+    right: 20px;
+  }
+  
+  .milestone-label {
+    font-size: 12px;
+  }
+  
+  .milestone-amount {
+    font-size: 11px;
+  }
+}
+.milestone-progress h4 {
+  font-size: 14px;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.milestone-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px 0;
+}
+
+.milestone-timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  height: 2px;
+  background: var(--border);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.milestone-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--border);
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+
+/* Updated Milestone Styles */
+.milestone-timeline {
+    position: relative;
+    padding: 40px 20px;
+    margin: 30px 0;
+}
+
+.timeline-track {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    top: 50%;
+    height: 2px;
+    background: var(--border);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+
+
+.milestone-amount {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+/* Milestone Form Styles */
+.milestone-form {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.milestone-form .form-group {
+    margin-bottom: 20px;
+}
+
+.milestone-form textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.file-info {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 4px;
+}
+
+.file-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.file-preview img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.file-preview .document-preview {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-dark);
+}
+
+/* Voting Section Styles */
+.milestone-review {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.milestone-details {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.milestone-files {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.milestone-files .file-item {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.milestone-files .file-item:hover {
+    transform: scale(1.05);
+}
+
+.voting-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+.voting-timer {
+    text-align: center;
+    color: var(--text-dark);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.voting-progress {
+    margin: 15px 0;
+}
+
+.vote-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.vote-count {
+    text-align: center;
+}
+
+.vote-label {
+    display: block;
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.voting-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn.approve-btn {
+    background: var(--success);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.btn.reject-btn {
+    background: var(--error);
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.btn.approve-btn:hover,
+.btn.reject-btn:hover {
+    opacity: 0.9;
+}
+
+/* File Preview Modal Styles */
+.modal-done-btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+#file-preview-content {
+    max-height: 70vh;
+    overflow-y: auto;
+    margin: 20px 0;
+}
+
+#file-preview-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+#file-preview-content .document-preview {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .milestone-timeline {
+        padding: 20px 10px;
+    }
+
+  
+    .voting-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .milestone-files {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}
+.campaign-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid var(--border);
+}
+
+.time-left {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.view-btn {
+  padding: 8px 16px;
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* Empty State */
+#empty-state {
+  text-align: center;
+  padding: 60px 0;
+}
+
+#empty-state h2 {
+  font-size: 24px;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+#empty-state p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+/* Loading State */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .campaigns-grid {
+      grid-template-columns: repeat(2, 1fr);  /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .campaigns-grid {
+      grid-template-columns: 1fr;  /* 1 column on mobile */
+  }
+}
+
+/* Dashboard Tabs */
+.dashboard-tabs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Campaign Filters */
+.campaign-filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 14px;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+  background: var(--primary-color);
+  color: var(--white);
+  border-color: var(--primary-color);
+}
+
+.invest-btn {
+  padding: 8px 16px;
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.invest-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* Investment Modal */
+.modal .form-hint {
+  display: block;
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+.close-modal {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 24px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: var(--text-dark);
+}
+
+
+
+/* Campaign Details Styles */
+.campaign-details-section {
+  padding-top: 100px;
+}
+
+
+.campaign-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.campaign-status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.campaign-status.active {
+  background: var(--success);
+  color: var(--white);
+}
+
+.campaign-status.ended {
+  background: var(--text-light);
+  color: var(--white);
+}
+
+.creator-info {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.campaign-details-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.campaign-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.campaign-image-container {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.campaign-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.campaign-description-box {
+  position: relative;  /* Add this */
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.campaign-description-box h2 {
+  display: inline-block;  /* Add this */
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.campaign-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campaign-stats-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.funding-progress {
+  margin-bottom: 30px;
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+
+.raised-amount {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.goal-amount {
+  color: var(--text-light);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--primary-color);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--text-light);
+}
+.milestone-status {
+  font-size: 13px;
+  color: var(--text-light);
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #f8f9fa;
+}
+.additional-stats {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.stat-item {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.stat-value {
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.milestone-section {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.milestone-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.milestone-box {
+  text-align: center;
+  padding: 20px;
+  background: var(--background);
+  border-radius: 8px;
+  position: relative;
+}
+
+.milestone-box.completed {
+  background: var(--success);
+  color: var(--white);
+}
+
+.milestone-box.current {
+  border: 2px solid var(--primary-color);
+}
+
+.milestone-number {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.milestone-percentage {
+  font-size: 16px;
+  color: var(--text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .campaign-details-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .milestone-timeline {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .milestone-timeline {
+      grid-template-columns: 1fr;
+  }
+}
+
+.campaign-details-section {
+  padding-top: 100px;  /* Increased to prevent overlap with nav */
+}
+
+.campaign-status-bar {
+  position: relative;
+  z-index: 1;  /* Lower than nav bar's z-index */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.campaign-header {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.campaign-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.delete-btn {
+  padding: 8px 16px;
+  background: var(--error);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Milestone Styles */
+.milestone-section {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+
+
+.milestone-dot.completed {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.milestone-dot.current {
+  border-color: var(--primary-color);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2);
+}
+
+
+/* Milestone Form Styles */
+.creator-milestone-form {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.creator-milestone-form textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.image-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Voting Section Styles */
+.voting-section {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.voting-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.approve-btn, .reject-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.approve-btn {
+  background: var(--success);
+  color: var(--white);
+}
+
+.reject-btn {
+  background: var(--error);
+  color: var(--white);
+}
+
+.approve-btn:hover, .reject-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.voting-stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.voting-timer {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+/* Real-time Notification Styles */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--white);
+  padding: 15px 25px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateX(120%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  color: var(--text-dark);
+}
+
+.notification.show {
+  transform: translateX(0);
+}
+
+/* Investment Progress Styles */
+.investment-details {
+  margin: 15px 0;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.detail-row .label {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.detail-row .value {
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/* Gallery Styles */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.gallery-image {
+  position: relative;
+  padding-bottom: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Milestone Detail Card */
+.milestone-detail-card {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin: 20px 0;
+}
+
+.milestone-detail-card h3 {
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.milestone-description {
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Campaign Progress Visualization */
+.milestone-progress-bar {
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  margin: 20px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.milestone-progress-fill {
+  height: 100%;
+  background: var(--primary-color);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* Vote Progress Bar */
+.vote-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.vote-progress-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.vote-progress-fill.yes {
+  background: var(--success);
+}
+
+.vote-progress-fill.no {
+  background: var(--error);
+}
+
+
+  .voting-buttons {
+      flex-direction: column;
+  }
+
+  .image-gallery {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .notification {
+      width: 90%;
+      left: 5%;
+      right: 5%;
+  }
+
+/* Loading State Enhancement */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Update invest button styling */
+.invest-now-btn {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.invest-now-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+/* Update investment modal positioning */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  animation: modalFade 0.3s ease-out;
+}
+
+@keyframes modalFade {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+#investment-amount {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#investment-amount:invalid {
+  border-color: var(--error);
+}
+
+.investment-modal .modal-content {
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+/* Add to your existing styles.css */
+
+.milestone-section {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-top: 20px;
+}
+
+.milestone-info {
+  text-align: center;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.milestone-form .form-group {
+  margin-bottom: 20px;
+}
+
+.milestone-form textarea {
+  min-height: 150px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  width: 100%;
+  font-family: inherit;
+}
+
+.image-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.voting-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.voting-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+.voting-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.success-btn {
+  background: var(--success);
+  color: var(--white);
+}
+
+.error-btn {
+  background: var(--error);
+  color: var(--white);
+}
+
+.milestone-content {
+  margin-bottom: 20px;
+}
+
+.milestone-content img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+/* Add to your existing styles.css */
+
+.campaign-image-container {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.campaign-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-note {
+  color: var(--text-light);
+  font-size: 14px;
+  margin-top: 15px;
+}
+.form-group input[type="number"] {
+  appearance: textfield;
+}
+
+.form-group input[type="number"]::-webkit-outer-spin-button,
+.form-group input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Milestone Timeline */
+.milestone-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+  margin: 30px 0;
+}
+
+.milestone-timeline::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  height: 2px;
+  background: var(--border);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+
+
+/* Milestone Form */
+.milestone-form {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 30px;
+  box-shadow: var(--shadow);
+}
+
+.milestone-form textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.image-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Voting Section */
+.voting-section {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 30px;
+  box-shadow: var(--shadow);
+}
+
+.milestone-details {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.image-gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.voting-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px 0;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.vote-count {
+  text-align: center;
+}
+
+.vote-label {
+  display: block;
+  color: var(--text-light);
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.voting-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.vote-btn {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vote-btn.approve {
+  background: var(--success);
+  color: var(--white);
+}
+
+.vote-btn.reject {
+  background: var(--error);
+  color: var(--white);
+}
+
+.vote-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.voting-timer {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+/* Status Messages */
+/* Responsive Design */
+@media (max-width: 768px) {
+  .milestone-timeline {
+      padding: 20px 10px;
+  }
+
+  .voting-stats {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  .voting-buttons {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .vote-btn {
+      width: 100%;
+  }
+
+  .image-gallery {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
+/* Animation for Status Changes */
+@keyframes progressFill {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+
+/* Add to your styles.css */
+.campaigns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.campaign-box {
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.campaign-image {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.campaign-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.campaign-content {
+  padding: 20px;
+}
+
+/* Updated stats grid */
+.campaign-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 15px 0;
+  padding: 15px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat .label {
+  color: var(--text-light);
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.stat .value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Add to your styles.css */
+.goal-completion-message {
+  margin: 20px 0;
+  padding: 20px;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 10px;
+  color: #155724;
+}
+
+.goal-completion-message h4 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.invest-now-btn.goal-met {
+  background-color: #28a745;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Progress section alignment */
+.campaign-progress {
+  margin: 20px 0;
+  padding: 20px;
+  background: var(--background);
+  border-radius: 10px;
+}
+
+.milestone-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.campaign-message {
+  margin: 20px 0;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.alert-success h4 {
+  color: #155724;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.campaign-message p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+
+.goal-met-badge {
+  background-color: var(--success);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.investment-details .detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.investment-details .detail-row:last-child {
+  border-bottom: none;
+}
+
+/* Add these to your styles.css if not already present */
+.tab-btn {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+
+
+
+
+.transactions-section .section-title {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+
+.transaction-item {
+  padding: 15px;
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.3s ease;
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-item:hover {
+  background-color: #f8f9fa;
+}
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.investor-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.investor-name {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.transaction-amount {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.transaction-link {
+  font-size: 14px;
+}
+
+.transaction-link:hover {
+  color: var(--primary-color);
+}
+
+.transaction-time {
+  font-size: 14px;
+  color: var(--text-light);
+}
+.no-transactions {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-light);
+}
+.transaction-link a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+/* Loading Spinner for Transactions */
+.transactions-loading {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.transaction-link a:hover {
+  color: var(--primary-color);
+}
+.transactions-list .spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.milestone-section {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-top: 20px;
+}
+
+.milestone-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.milestone-block {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.milestone-block.active {
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+.milestone-block.disabled {
+  opacity: 0.6;
+  background: #f8f9fa;
+}
+
+.milestone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.milestone-number {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.milestone-percentage {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.milestone-timing {
+  margin: 15px 0;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.timing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.timing-label {
+  color: var(--text-light);
+}
+
+.timing-value {
+  color: var(--text-dark);
+}
+.milestone-section h3 {
+  font-size: 18px;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+.milestone-button {
+  width: 100%;
+  padding: 10px;
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.milestone-block.disabled .milestone-button {
+  background: var(--border);
+  cursor: not-allowed;
+}
+
+.milestone-button:not(:disabled):hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* Milestone Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.modal-content {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-content h2 {
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+.modal-content p {
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.modal-content .primary-btn {
+  margin-top: 25px;
+}
+.close-modal {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 24px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: var(--text-dark);
+}
+
+.milestone-info-note {
+  background: #f8f9fa;
+  border-left: 4px solid var(--primary-color);
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.milestone-info-note strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.milestone-info-note ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.milestone-info-note li {
+  margin: 5px 0;
+  color: var(--text-light);
+}
+.format-note {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-light);
+  font-style: italic;
+}
+.file-upload-container {
+  margin: 20px 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+.file-input {
+  width: 100%;
+  padding: 30px;
+  border: 2px dashed var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.3s ease;
+  background: #f8f9fa;
+}
+
+.file-input:hover {
+  border-color: var(--primary-color);
+}
+
+.file-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.file-preview-item {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+}
+.file-preview-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.file-preview img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.document-preview {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 10px;
+  border: 1px solid var(--border);
+}
+.document-preview span {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  word-break: break-word;
+}
+.document-preview small {
+  color: var(--text-light);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.form-hint {
+  display: block;
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+
+/* Milestone Review Modal Styles */
+.modal-content.large {
+  max-width: 800px;
+  width: 95%;
+  max-height: 90vh;
+}
+
+.milestone-review-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.submission-info {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-top: 5px;
+}
+
+.milestone-document-viewer {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  min-height: 400px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+#document-view {
+  width: 100%;
+  height: 100%;
+}
+
+#document-view iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.milestone-review-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.approve-btn, .reject-btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.approve-btn {
+  background: var(--success);
+  color: var(--white);
+}
+
+.reject-btn {
+  background: var(--error);
+  color: var(--white);
+}
+
+.approve-btn:hover, .reject-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+/* Update milestone block button styles */
+.milestone-button.review {
+  background: var(--primary-color);
+}
+
+.milestone-button.approved {
+  background: var(--success);
+  cursor: pointer;
+}
+
+.milestone-button.rejected {
+  background: var(--error);
+  cursor: pointer;
+}
+
+.milestone-button.active {
+  background: var(--primary-color);
+  opacity: 1;
+  cursor: pointer;
+}
+
+.milestone-button:disabled {
+  background: var(--border);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.milestone-block.current {
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
+}
+
+.milestone-block.disabled {
+  opacity: 0.7;
+}
+
+/* Milestone Details Section */
+.milestone-details-section {
+  padding-top: 100px;
+  min-height: calc(100vh - 70px);
+  background-color: var(--background);
+}
+
+.campaign-info {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+.milestone-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.milestone-content {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+/* Milestone Form Styles */
+.milestone-form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.milestone-form .form-group {
+  margin-bottom: 25px;
+}
+
+.milestone-form textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.image-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Investor View Styles */
+.milestone-details .description-content {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 6px;
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.milestone-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.milestone-images img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.milestone-images img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.voting-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 30px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.vote-count {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.voting-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.approve-btn {
+  background: var(--success);
+  color: var(--white);
+}
+
+.reject-btn {
+  background: var(--error);
+  color: var(--white);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .milestone-content {
+      padding: 20px;
+  }
+
+  .voting-stats {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+  }
+
+  .voting-actions {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  .btn {
+      width: 100%;
+  }
+
+  .milestone-images {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+/* Milestone Navigation Styles */
+.milestone-navigation {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-top: 30px;
+}
+
+.milestone-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.milestone-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+}
+
+.milestone-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.milestone-card.active {
+  border-color: var(--primary-color);
+}
+
+.milestone-card.completed {
+  border-color: var(--success);
+}
+
+.milestone-card.locked {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.milestone-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border);
+}
+
+.milestone-percentage {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+
+
+.milestone-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.milestone-link:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.milestone-card.locked .milestone-link {
+  background: var(--border);
+  cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+  .milestone-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .milestone-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.step:hover {
+  background: #f8f9fa;
+}
+
+.step-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-light);
+  flex-shrink: 0;
+}
+
+.step.active .step-circle {
+  background: var(--primary-color);
+  color: white;
+}
+
+.step.completed .step-circle {
+  background: var(--success);
+  color: white;
+}
+
+.step-info {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  flex-grow: 1;
+}
+
+.step:not(.locked) .step-info:hover {
+  color: var(--primary-color);
+}
+
+.step-amount {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.step-status {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.step.active .step-status {
+  color: var(--primary-color);
+}
+
+.step.completed .step-status {
+  color: var(--success);
+}
+
+.step.locked {
+  opacity: 0.7;
+}
+
+.step.locked .step-info {
+  cursor: not-allowed;
+}
+
+/* Milestone Progress Line */
+
+/* Horizontal Milestone Tracker */
+.campaign-milestone-tracker {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  margin-top: 30px;
+}
+
+.tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tracker-header h3 {
+  font-size: 18px;
+  color: var(--text-dark);
+  font-weight: 600;
+  margin: 0;
+}
+
+.current-milestone {
+  font-size: 14px;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.milestone-timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e0e0e0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex: 1;
+}
+
+.step-point {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  border: 2px solid #e0e0e0;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+
+.step-details {
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.step-details:hover {
+  background: #f8f9fa;
+}
+
+.step-number {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.step-amount {
+  font-size: 14px;
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.step-status {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+/* Step States */
+.timeline-step.completed .step-point {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.timeline-step.completed .step-status {
+  color: var(--success);
+}
+
+.timeline-step.active .step-point {
+  background: var(--white);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2);
+}
+
+.timeline-step.active .step-status {
+  color: var(--primary-color);
+}
+
+.timeline-step.locked {
+  opacity: 0.7;
+}
+
+.timeline-step.locked .step-details {
+  cursor: not-allowed;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .step-details {
+      padding: 4px;
+  }
+  
+  .step-number {
+      font-size: 12px;
+  }
+  
+  .step-amount {
+      font-size: 12px;
+  }
+  
+  .step-status {
+      font-size: 11px;
+  }
+}
+
+
+/* Sidebar Styles */
+.campaign-stats-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+.campaign-details-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.detail-value {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.milestone-tracker {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 30px;
+  box-shadow: var(--shadow);
+}
+
+.milestone-steps {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+.progress-line {
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  height: 2px;
+  background: var(--success); /* Color for completed progress */
+  transform: translateY(-50%);
+  transition: width 0.3s ease;
+  width: 0; /* Initial width */
+  z-index: 1;
+}
+.milestone-steps::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  right: 50px;
+  height: 2px;
+  background: #e0e0e0; /* Background line */
+  transform: translateY(-50%);
+}
+
+.milestone-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.percentage {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+/* Milestone States */
+.milestone-step.completed .milestone-dot {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.milestone-step.active .milestone-dot {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
+}
+
+.milestone-step.locked {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.transactions-section {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  margin-top: 20px;
+}
+
+.transactions-section h3 {
+  font-size: 16px;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.transactions-list {
+  min-height: 100px; /* Add minimum height to prevent layout shift */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .milestone-steps {
+      padding: 20px 20px;
+  }
+  
+  .milestone-label {
+      font-size: 12px;
+  }
+}
+.preview-container {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.preview-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.image-info {
+    padding: 10px;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.file-name {
+    font-size: 14px;
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.file-size {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.section-header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header-actions h2 {
+  margin: 0;
+}
+
+.view-milestones-btn {
+  position: absolute;
+  top: 30px;         
+  right: 30px;        
+  padding: 10px 20px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.view-milestones-btn:hover:not(.disabled) {
+  background: #2980b9;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.view-milestones-btn.disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+.view-milestones-btn.disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+.view-milestones-btn:hover {
+  background: #2980b9;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+.campaign-info {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 20px;
+}
+
+.progress-line {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  right: 40px;
+  height: 2px;
+  background: var(--border);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.milestone-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+
+
+.milestone-step.current .milestone-dot {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2);
+}
+
+
+.milestone-step.completed::before {
+  background: var(--success);
+}
+/* Content Sections */
+.milestone-content {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+/* Creator View Styles */
+.milestone-submission h2 {
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  min-height: 120px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.form-group input[type="file"] {
+  display: block;
+  margin: 10px 0;
+}
+
+.form-hint {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+.image-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.submit-btn {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* Investor View Styles */
+.milestone-details {
+  margin: 20px 0;
+}
+
+.description-content {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.milestone-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.milestone-images img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.milestone-images img:hover {
+  transform: scale(1.05);
+}
+
+.voting-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.voting-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.vote-count {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.voting-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.vote-btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vote-btn.approve {
+  background: var(--success);
+  color: var(--white);
+}
+
+.vote-btn.reject {
+  background: var(--error);
+  color: var(--white);
+}
+
+.vote-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--success);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: 0 auto 20px;
+}
+
+.modal-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .voting-actions {
+      flex-direction: column;
+  }
+
+  .vote-btn {
+      width: 100%;
+  }
+
+  .milestone-images {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .voting-stats {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+  }
+}
+/* Goal Met Button Styles */
+.invest-now-btn.goal-met {
+  background-color: var(--success);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.invest-now-btn.goal-met:hover {
+  background-color: #25a565; /* Darker shade of success color */
+  transform: translateY(-1px);
+}
+
+/* Goal Met Modal Styles */
+#goal-met-modal .modal-content {
+  max-width: 450px;
+  text-align: center;
+  padding: 40px;
+}
+
+.goal-met-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.milestone-note {
+  margin-top: 15px;
+  padding: 15px;
+  background: rgba(255, 193, 7, 0.1);
+  border-left: 4px solid #ffc107;
+  border-radius: 4px;
+}
+.milestone-note strong {
+  color: var(--text-dark);
+}
+
+@keyframes bounceIn {
+  0% {
+      transform: scale(0);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.milestone-status-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+.milestone-status-card h2 {
+  color: var(--text-dark);
+  font-size: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border);
+}
+.current-milestone-info {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+.milestone-info h3 {
+  color: var(--text-light);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.milestone-number {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.milestone-percentage {
+  color: var(--text-light);
+  font-size: 14px;
+}
+.milestone-instructions {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+.milestone-instructions ol {
+  margin: 0;
+  padding-left: 20px;
+}
+.milestone-instructions li {
+  margin-bottom: 10px;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+.milestone-instructions h3 {
+  font-size: 16px;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+.instruction-list {
+  padding-left: 0;
+}
+.instruction-list p {
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+/* Form Styling */
+.submission-card, .milestone-review-card {
+  background: transparent;
+  border-radius: 10px;
+  padding: 0;
+  box-shadow:none;
+  margin-top: 20px;
+}
+
+.card-header {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-header h2 {
+  color: var(--text-dark);
+  font-size: 20px;
+}
+
+/* File Upload Styling */
+.file-upload-container {
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  margin-top: 10px;
+  background: #f8f9fa;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.file-upload-container:hover {
+  border-color: var(--primary-color);
+}
+
+.upload-instructions {
+  color: var(--text-light);
+}
+
+.upload-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.file-limit {
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Image Preview */
+.image-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.image-preview img:hover {
+  transform: scale(1.05);
+}
+
+/* Voting Section */
+.voting-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.voting-instruction {
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+.voting-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.vote-btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vote-btn.approve {
+  background: var(--success);
+  color: var(--white);
+}
+
+.vote-btn.reject {
+  background: var(--error);
+  color: var(--white);
+}
+
+.vote-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.vote-icon {
+  font-size: 18px;
+}
+
+/* Description Content */
+.description-section {
+  margin-bottom: 30px;
+}
+
+.description-content {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .voting-actions {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .vote-btn {
+      width: 100%;
+      justify-content: center;
+  }
+
+  .image-preview {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
+.info-message {
+  background-color: transparent;
+  color: #1976d2;
+  padding: 0;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+  border: none;
+}
+
+.vote-status {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  border-left: 4px solid var(--primary-color);
+}
+
+.vote-counts {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.vote-count-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.vote-count-label {
+  font-weight: 500;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+.vote-count-value {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.vote-total-investors {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-light);
+  font-size: 13px;
+}
+
+.milestone-status-message {
+  padding: 0;
+  background: transparent;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.info-message {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.info-message h3 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.info-message p {
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.vote-counts {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(25, 118, 210, 0.1);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.primary-btn {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondary-btn {
+  background: var(--border);
+  color: var(--text-dark);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover, .secondary-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.vote-complete-message {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.vote-complete-message h4 {
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.current-votes {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border);
+}
+
+.milestone-alert-icon {
+  font-size: 36px;
+  margin-bottom: 20px;
+  animation: bellRing 1s ease;
+}
+
+@keyframes bellRing {
+  0%, 100% { transform: rotate(0); }
+  20%, 60% { transform: rotate(15deg); }
+  40%, 80% { transform: rotate(-15deg); }
+}
+.voting-progress {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.vote-counts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.vote-stat {
+  text-align: center;
+  padding: 10px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.vote-stat .label {
+  display: block;
+  color: var(--text-light);
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.vote-stat .value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.time-remaining {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+}
+
+.image-modal-content {
+  max-width: 90%;
+  max-height: 90vh;
+  margin: auto;
+  position: relative;
+  animation: modalZoom 0.3s ease-out;
+}
+
+.image-modal-content img {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.close-button {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.close-button:hover {
+  transform: scale(1.1);
+}
+
+@keyframes modalZoom {
+  from {
+      transform: scale(0.3);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+/* Make milestone images clickable */
+.milestone-images img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.milestone-images img:hover {
+  transform: scale(1.05);
+}
+
+.evidence-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.evidence-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.evidence-image-container:hover .image-overlay {
+  opacity: 1;
+}
+
+.evidence-image-container:hover .evidence-image {
+  transform: scale(1.05);
+}
+
+.click-to-enlarge {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.fund-distribution-tracking {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: var(--shadow);
+  margin-top: 30px;
+}
+
+.fund-distribution-tracking h3 {
+  color: var(--text-dark);
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border);
+}
+
+.balance-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.balance-row, .progress-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.balance-row span:first-child,
+.progress-row span:first-child {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.balance-row span:last-child {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.milestone-section {
+  padding-top: 12px;
+}
+
+.milestone-bar-container {
+  width: 100%;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.milestone-bar {
+  height: 100%;
+  background: var(--primary-color);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+#milestone-completion {
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.milestone-message-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.milestone-message-container .success-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.milestone-message-container h3 {
+  color: var(--text-dark);
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.milestone-message-container p {
+  color: var(--text-light);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.modal-btn {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+@keyframes bounceIn {
+  0% {
+      transform: scale(0);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.milestone-completion-modal {
+  text-align: center;
+}
+
+.milestone-completion-modal .success-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.milestone-completion-modal h2 {
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.milestone-completion-modal p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.modal-btn {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+/* Update in styles.css */
+#start-milestone-modal .modal-content {
+  text-align: center;
+  padding: 30px;
+}
+
+#start-milestone-modal .modal-actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+/* Style both buttons uniformly */
+#start-milestone-modal .modal-actions button,
+#start-milestone-modal .start-now,
+#start-milestone-modal .later {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0; /* Remove any default margins */
+}
+
+/* Start Now button style */
+#start-milestone-modal .start-now {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+/* Later button style */
+.modal-actions .cancel-btn {
+  background: var(--border);
+  color: var(--text-dark);
+  border: none;
+}
+
+
+/* Add to styles.css */
+.profile-section {
+  padding-top: 100px;
+  min-height: calc(100vh - 70px);
+  background: var(--background);
+}
+
+.profile-card {
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.profile-card h1 {
+  color: var(--text-dark);
+  font-size: 24px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-info .info-group {
+  margin-bottom: 25px;
+}
+
+.profile-info label {
+  display: block;
+  color: var(--text-light);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.profile-info .info-value {
+  color: var(--text-dark);
+  font-size: 16px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copy-btn {
+  padding: 6px 12px;
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.edit-btn {
+  background: #f8f9fa;
+  color: #3498db;
+  border: 1px solid #e1e8f0;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: 10px;
+}
+
+.edit-btn:hover {
+  background: #e9ecef;
+  border-color: #cbd5e1;
+}
+
+.edit-btn:active {
+  transform: translateY(1px);
+}
+
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  min-width: 120px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-actions .save-btn {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.modal-actions .cancel-btn {
+  background: #e0e0e0;
+  color: var(--text-dark);
+}
+
+.modal-error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 8px;
+  padding: 8px;
+  background-color: rgba(231, 76, 60, 0.1);
+  border-radius: 4px;
+  text-align: center;
+}
+
+
+
+
+
+
+.reward-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: var(--shadow);
+  margin-top: 20px;
+}
+
+.reward-header h3 {
+  color: var(--text-dark);
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.coupon-container {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.coupon-code {
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary-color);
+  letter-spacing: 2px;
+}
+
+.reward-info {
+  color: var(--text-light);
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+
+
+

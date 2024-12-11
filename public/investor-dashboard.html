@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Investor Dashboard - EtherTrust</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container nav-container">
+        <a href="/" class="logo">EtherTrust</a>
+        <div class="nav-links">
+            <a href="/profile" class="nav-link">Profile</a>
+            <span id="wallet-balance">0 ETH</span>
+            <a href="#" id="logout-link">Logout</a>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Investment Dashboard</h1>
+                <p>Explore and invest in innovative campaigns</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <!-- Dashboard Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Invested</h3>
+                    <div class="stat-number" id="total-invested">0 ETH</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Investments</h3>
+                    <div class="stat-number" id="active-investments">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Available Balance</h3>
+                    <div class="stat-number" id="available-balance">0 ETH</div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="dashboard-tabs">
+                <button class="tab-btn active" data-tab="available-campaigns">Available Campaigns</button>
+                <button class="tab-btn" data-tab="my-investments">My Investments</button>
+            </div>
+
+            <!-- Available Campaigns Section -->
+            <div id="available-campaigns" class="tab-content active">
+                <div class="section-header">
+                    <h2>Available Campaigns</h2>
+                    <p>Discover and invest in promising campaigns</p>
+                </div>
+
+                <!-- Campaign filters -->
+                <div class="campaign-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="ending-soon">Ending Soon</button>
+                </div>
+
+                <!-- Campaigns Grid -->
+                <div class="campaigns-grid" id="available-campaigns-container">
+                    <!-- Campaign cards will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- My Investments Section -->
+            <div id="my-investments" class="tab-content">
+                <div class="section-header">
+                    <h2>My Investments</h2>
+                    <p>Track your investment portfolio</p>
+                </div>
+
+                <div class="campaigns-grid" id="invested-campaigns-container">
+                    <!-- Invested campaign cards will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loading-indicator" class="loading-spinner" style="display: none;">
+                <div class="spinner"></div>
+            </div>
+
+            <!-- Error Message -->
+            <div id="error-message" class="error-message"></div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="section text-center" style="display: none;">
+                <h2>No Campaigns Available</h2>
+                <p>Check back later for new investment opportunities</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Campaign Card Template -->
+    <template id="campaign-card-template">
+        <div class="campaign-box">
+            <div class="campaign-image">
+                <img src="" alt="Campaign Image">
+                <div class="campaign-status"></div>
+            </div>
+            <div class="campaign-content">
+                <h3></h3>
+                <p class="campaign-description"></p>
+                
+                <div class="campaign-stats">
+                    <div class="stat">
+                        <span class="label">Goal:</span>
+                        <span class="value goal-amount"></span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Raised:</span>
+                        <span class="value raised-amount"></span>
+                    </div>
+                </div>
+
+                <div class="campaign-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <p class="progress-text"></p>
+                </div>
+
+                <div class="campaign-actions">
+                    <span class="time-left"></span>
+                    <button class="invest-btn">Invest Now</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Investment Modal -->
+    <div id="investment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Invest in Campaign</h2>
+            <form id="invest-form">
+                <div class="form-group">
+                    <label for="investment-amount">Amount (ETH)</label>
+                    <input type="number" id="investment-amount" step="0.01" min="0.01" required>
+                    <span class="form-hint">Your balance: <span id="modal-wallet-balance">0 ETH</span></span>
+                </div>
+                <button type="submit" class="btn primary-btn">Confirm Investment</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2 id="success-message">Success!</h2>
+            <button onclick="closeModal('success-modal')" class="btn primary-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.2.2/web3.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/investor-dashboard.js"></script>
+</body>
+</html>

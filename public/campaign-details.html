@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Details | EtherTrust</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container nav-container">
+            <a href="/" class="logo">EtherTrust</a>
+            <div class="nav-links">
+                <a href="#" id="dashboard-link">Dashboard</a>
+                <span id="wallet-balance">0 ETH</span>
+                <a href="#" id="logout-link">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="campaign-details-section">
+        <div class="container">
+            <!-- Campaign Status and Creator Info -->
+            <div class="campaign-header">
+                <div class="campaign-status-bar">
+                    <div class="campaign-status"></div>
+                    <div class="creator-info">Created by: <span id="creator-name"></span></div>
+                </div>
+                <h1 id="campaign-title"></h1>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="campaign-details-grid">
+                <!-- Left Column: Campaign Info -->
+                <div class="campaign-main-content">
+                    <!-- Campaign Image -->
+                    <div class="campaign-image-container">
+                        <img id="campaign-image" src="" alt="Campaign Image">
+                    </div>
+
+                    <!-- Campaign Description -->
+                    <div class="campaign-description-box">
+                        <h2>About This Campaign</h2>
+                        <button id="view-milestones-btn" class="view-milestones-btn disabled" disabled>
+                            View Milestones
+                        </button>
+                        <div id="campaign-description"></div>
+                    </div>
+
+                    <!-- Add this after the campaign description box -->
+                    <div id="creator-fund-tracker" class="fund-distribution-tracking">
+                        <h3>Fund Distribution Tracking</h3>
+                        <div class="balance-details">
+                            <div class="balance-row">
+                                <span>Total Campaign Amount:</span>
+                                <span id="total-contract-amount">0.4 ETH</span>
+                            </div>
+                            <div class="balance-row">
+                                <span>Released to Creator:</span>
+                                <span id="released-amount">0.1000 ETH</span>
+                            </div>
+                            <div class="balance-row">
+                                <span>Remaining in Contract:</span>
+                                <span id="remaining-amount">0.3000 ETH</span>
+                            </div>
+                            <div class="balance-row">
+                                <span>Next Milestone Release:</span>
+                                <span id="next-milestone-amount">0.1000 ETH</span>
+                            </div>
+                            <div class="milestone-section">
+                                <div class="progress-row">
+                                    <span>Milestone Progress:</span>
+                                    <span id="milestone-completion">1/4 Milestones Completed</span>
+                                </div>
+                                <div class="milestone-bar-container">
+                                    <div id="milestone-progress-bar" class="milestone-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Right Column: Campaign Stats -->
+                <div class="campaign-sidebar">
+                    <!-- Campaign Progress Card -->
+                    <div class="campaign-stats-card">
+                        <div class="funding-progress">
+                            <div class="progress-stats">
+                                <span class="raised-amount">
+                                    <span id="current-amount">0</span> ETH
+                                </span>
+                                <span class="goal-amount">
+                                    of <span id="goal-amount">0</span> ETH
+                                </span>
+                            </div>
+                            <div class="progress-bar">
+                                <div id="progress-fill" class="progress-fill"></div>
+                            </div>
+                            <div class="progress-info">
+                                <span><span id="backers-count">0</span> backers</span>
+                                <span id="days-left"></span>
+                            </div>
+                        </div>
+                        <!-- Investment Button -->
+                        <div class="campaign-actions">
+                            <button id="invest-button" class="invest-now-btn" style="display: none;">
+                                Invest Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Campaign Details Card -->
+                    <div class="campaign-details-card">
+                        <div class="detail-row">
+                            <span class="detail-label">Start Date</span>
+                            <span id="start-date" class="detail-value"></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">End Date</span>
+                            <span id="end-date" class="detail-value"></span>
+                        </div>
+                    </div>
+
+                    <!-- Recent Transactions -->
+                    <div class="transactions-section">
+                        <h3>Recent Transactions</h3>
+                        <div id="transactions-list" class="transactions-list">
+                            <!-- Loading placeholder -->
+                            <div class="loading">Loading transactions...</div>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Modal -->
+    <div id="investment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('investment-modal')">&times;</span>
+            <h2>Invest in Campaign</h2>
+            <h3 id="campaign-name-modal"></h3>
+            <form id="investment-form">
+                <div class="form-group">
+                    <label for="investment-amount">Amount (ETH)</label>
+                    <div id="modal-error-message" class="modal-error-message" style="display: none; color: red; margin-top: 5px;"></div>
+                    <input type="number" id="investment-amount" step="0.0001" min="0.001" required>
+                    <div class="form-hint">
+                        <span id="remaining-amount"></span>
+                        <br>
+                        Minimum: 0.001 ETH
+                    </div>
+                    <div class="form-hint">
+                        Your balance: <span id="modal-wallet-balance">0 ETH</span>
+                    </div>
+                </div>
+                <button type="submit" class="primary-btn">Confirm Investment</button>
+            </form>
+            <div class="modal-note">Note: Transaction may take a few moments to process</div>
+        </div>
+    </div>
+    
+<!-- Add this near your other modals -->
+<div id="start-milestone-modal" class="modal">
+    <div class="modal-content">
+        <h2>Start First Milestone</h2>
+        <p>The campaign has reached its goal! Would you like to start the first milestone now?</p>
+        <div class="modal-actions">
+            <button onclick="handleStartMilestone('now')" class="btn primary-btn">Start Now</button>
+            <button onclick="handleStartMilestone('later')" class="btn secondary-btn">Later</button>
+        </div>
+    </div>
+</div>
+<!-- Add this modal for investors -->
+<div id="milestone-notification-modal" class="modal">
+    <div class="modal-content">
+        <div class="milestone-alert-icon">🔔</div>
+        <h2>New Milestone Started</h2>
+        <p>The first milestone has been submitted and is ready for your review and vote.</p>
+        <div class="modal-actions">
+            <button onclick="handleMilestoneNotification('now')" class="btn primary-btn">Review Now</button>
+            <button onclick="handleMilestoneNotification('later')" class="btn secondary-btn">Later</button>
+        </div>
+    </div>
+</div>
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2>Success!</h2>
+            <p id="success-message"></p>
+            <button onclick="closeModal('success-modal')" class="primary-btn">Close</button>
+        </div>
+    </div>
+    <!-- Add this after your other modals -->
+    <!-- Milestone Complete Modal -->
+<div id="milestone-complete-modal" class="modal">
+    <div class="modal-content">
+        <div class="success-icon">🎉</div>
+        <h2>Milestone Completed!</h2>
+        <p><span id="milestone-amount">0</span> has been added to your wallet.</p>
+        <p>Would you like to start the next milestone now?</p>
+        <div class="modal-actions">
+            <button onclick="handleNextMilestone('now')" class="primary-btn">Start Now</button>
+            <button onclick="handleNextMilestone('later')" class="secondary-btn">Later</button>
+        </div>
+    </div>
+</div>
+<div id="milestone-completion-modal" class="modal milestone-completion-modal">
+    <div class="modal-content">
+        <div class="success-icon">🎉</div>
+        <h2>All Milestones Completed!</h2>
+        <p></p>
+        <button onclick="closeModal('milestone-completion-modal')" class="modal-btn">Close</button>
+    </div>
+</div>
+<!-- Start Next Milestone Modal -->
+<div id="start-next-milestone-modal" class="modal">
+    <div class="modal-content">
+        <h2>Start Next Milestone</h2>
+        <p>Would you like to start milestone <span id="next-milestone-number"></span> now?</p>
+        <div class="modal-actions">
+            <button onclick="handleNextMilestone('now')" class="primary-btn">Start Now</button>
+            <button onclick="handleNextMilestone('later')" class="secondary-btn">Later</button>
+        </div>
+    </div>
+</div>
+    <!-- Loading Indicator -->
+    <div id="loading-indicator" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+    <div id="goal-met-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('goal-met-modal')">&times;</span>
+            <div class="goal-met-icon">🎉</div>
+            <h2>Campaign Goal Reached!</h2>
+            <p>This campaign has successfully reached its funding goal of <span id="goal-amount-reached"></span> ETH.</p>
+            <p class="milestone-note">You will be notified when the creator initiates the first milestone.</p>
+            <button onclick="closeModal('goal-met-modal')" class="primary-btn">Close</button>
+        </div>
+    </div>
+    <!-- Error Message -->
+    <div id="error-message" class="error-message"></div>
+
+    <!-- Scripts -->
+    <!-- Web3 Library -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <!-- Utility Scripts -->
+    <script src="/js/utils.js"></script>
+    <!-- Main Script -->
+    <script src="/js/campaign-details.js"></script>
+</body>
+</html>

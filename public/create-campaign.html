@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Campaign - EtherTrust</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container nav-container">
+        <a href="/" class="logo">EtherTrust</a>
+        <div class="nav-links">
+            <a href="/creator-dashboard">Dashboard</a>
+            <span id="wallet-balance">0 ETH</span>
+            <a href="/login" id="logout-link">Logout</a>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Create New Campaign</h1>
+                <p>Set up your crowdfunding campaign in a few simple steps</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <div class="auth-container create-campaign-container">
+                <form id="create-campaign-form">
+                    <div class="form-section">
+                        <h2>Campaign Details</h2>
+                        <div class="form-group">
+                            <label for="campaign-name">Campaign Name</label>
+                            <input type="text" id="campaign-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="campaign-description">Campaign Description</label>
+                            <textarea 
+        id="campaign-description" 
+        name="description" 
+        required 
+        minlength="50"
+        style="white-space: pre-line;"
+    ></textarea>
+                            <span class="form-hint">Minimum 50 characters</span>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Funding Information</h2>
+                        <div class="form-group">
+                            <label for="campaign-goal">Funding Goal (ETH)</label>
+                            <input type="number" id="campaign-goal" step="0.1" min="0.1" required>
+                            <span class="form-hint">Minimum 0.1 ETH</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="campaign-end-date">End Date</label>
+                            <input type="date" id="campaign-end-date" required>
+                            <span class="form-hint">Campaign must run for at least 24 hours</span>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Campaign Image</h2>
+                        <div class="form-group">
+                            <label for="campaign-image">Upload Campaign Image</label>
+                            <input type="file" id="campaign-image" accept="image/*">
+                            <span class="form-hint">Recommended size: 1200x630px (Max: 5MB)</span>
+                        </div>
+                        <div id="image-preview" class="image-preview"></div>
+                    </div>
+
+                    <div class="step-card info-box">
+                        <h2>Milestone System</h2>
+                        <p>Your campaign funds will be released in 4 milestones:</p>
+                        
+                        <div class="steps-grid">
+                            <div class="stat-card">
+                                <div class="step-icon">1</div>
+                                <span class="stat-value">25%</span>
+                                <span class="stat-label">First Release</span>
+                            </div>
+                            <div class="stat-card">
+                                <div class="step-icon">2</div>
+                                <span class="stat-value">25%</span>
+                                <span class="stat-label">Second Release</span>
+                            </div>
+                            <div class="stat-card">
+                                <div class="step-icon">3</div>
+                                <span class="stat-value">25%</span>
+                                <span class="stat-label">Third Release</span>
+                            </div>
+                            <div class="stat-card">
+                                <div class="step-icon">4</div>
+                                <span class="stat-value">25%</span>
+                                <span class="stat-label">Final Release</span>
+                            </div>
+                        </div>
+                        
+                        <p>Each milestone requires investor approval to release funds</p>
+                    </div>
+
+                    <div id="error-message" class="error-message"></div>
+
+                    <button type="submit" class="btn primary-btn">Create Campaign</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2>Success!</h2>
+            <p id="success-message"></p>
+            <p>Redirecting to dashboard...</p>
+        </div>
+    </div>
+    <div id="loading-indicator" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.2.2/web3.min.js"></script>
+    <script src="js/create-campaign.js"></script>
+</body>
+</html>

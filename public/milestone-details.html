@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Milestone Details | EtherTrust</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="container nav-container">
+        <a href="/" class="logo">EtherTrust</a>
+        <div class="nav-links">
+            <a href="#" id="dashboard-link">Dashboard</a>
+            <span id="wallet-balance">0 ETH</span>
+            <a href="#" id="logout-link">Logout</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="milestone-details-section">
+        <div class="container">
+            <!-- Campaign Header -->
+            <div class="campaign-header">
+                <h1 id="campaign-name"></h1>
+                
+                <div class="milestone-status-card">
+                    <h2>Current Milestone</h2>
+                    <div class="current-milestone-info">
+                        <div class="milestone-number">
+                            <span id="milestone-text">First Milestone</span>
+                        </div>
+                        <div class="milestone-percentage">
+                            <span id="milestone-fund-text">25% of total funds</span>
+                        </div>
+                    </div>
+
+                    <!-- Creator View -->
+                    <div id="creator-view" class="milestone-content" style="display: none;">
+                        <div class="milestone-instructions">
+                            <h3>Milestone Instructions</h3>
+                            <div class="instruction-list">
+                                <ol>
+                                    <li>Provide a detailed description of your milestone progress</li>
+                                    <li>Include specific achievements and completed objectives</li>
+                                    <li>Upload supporting evidence (images/documentation)</li>
+                                    <li>Submit for investor review and approval</li>
+                                </ol>
+                                <div class="milestone-note">
+                                    <strong>Note:</strong> Once approved, funds for this milestone will be released automatically
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Dynamic content area - submission form or status message will be inserted here -->
+                        <div class="submission-area"></div>
+                    </div>
+
+                    <!-- Investor View -->
+                    <div id="investor-view" class="milestone-content" style="display: none;">
+                        <div class="milestone-review-card">
+                            <div class="card-header">
+                                <h2>Milestone Review</h2>
+                            </div>
+                
+                            <div class="milestone-instructions">
+                                <ol>
+                                    <li>Review the milestone progress description</li>
+                                    <li>Examine the supporting evidence provided</li>
+                                    <li>Verify completed objectives and achievements</li>
+                                    <li>Cast your vote to approve or reject the milestone</li>
+                                </ol>
+                                <div class="milestone-note">
+                                    <strong>Note:</strong> Your vote helps ensure project accountability and proper fund distribution
+                                </div>
+                            </div>
+                            
+                            <!-- Milestone Content -->
+                            <div class="milestone-details">
+                                <div class="description-section">
+                                    <h3>Progress Description</h3>
+                                    <div id="milestone-description-view" class="description-content"></div>
+                                </div>
+
+                                <div class="evidence-section">
+                                    <h3>Supporting Evidence</h3>
+                                    <div id="milestone-images-view" class="milestone-images"></div>
+                                </div>
+                            </div>
+
+                            <!-- Voting Section -->
+                            <div class="voting-section">
+                                <h3>Cast Your Vote</h3>
+                                <p class="voting-instruction">Review the milestone progress and cast your vote</p>
+                                <div class="voting-actions">
+                                    <button onclick="handleVoteClick(true)" class="vote-btn approve">
+                                        <i class="vote-icon">✓</i> Approve
+                                    </button>
+                                    <button onclick="handleVoteClick(false)" class="vote-btn reject">
+                                        <i class="vote-icon">✕</i> Reject
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loading-indicator" class="loading-spinner" style="display: none;">
+                <div class="spinner"></div>
+            </div>
+
+            <!-- Image Modal -->
+            <div id="image-modal" class="modal image-modal">
+                <div class="modal-content image-modal-content">
+                    <button class="close-button" onclick="closeImageModal()">&times;</button>
+                    <img id="modal-image" src="" alt="Enlarged evidence image">
+                </div>
+            </div>
+
+            <!-- Error State -->
+            <div id="error-message" class="error-message"></div>
+
+            <!-- Success Modal -->
+            <div id="success-modal" class="modal">
+                <div class="modal-content">
+                    <div class="success-icon">✓</div>
+                    <h2>Success!</h2>
+                    <p id="success-message">Your action has been completed successfully.</p>
+                    <button onclick="closeModal('success-modal')" class="modal-btn">Close</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="/js/milestone-details.js"></script>
+</body>
+</html>

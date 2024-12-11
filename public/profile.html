@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile | EtherTrust</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container nav-container">
+        <a href="#" class="logo">EtherTrust</a>
+        <div class="nav-links">
+            <a href="#" id="dashboard-link">Dashboard</a>
+            <span id="wallet-balance">0 ETH</span>
+            <a href="#" id="logout-link">Logout</a>
+        </div>
+    </div>
+
+    <div class="profile-section">
+        <div class="container">
+            <div class="profile-card">
+                <h1>Profile</h1>
+                <div class="profile-info">
+                    <div class="info-group">
+                        <label>Username</label>
+                        <div id="profile-username" class="info-value">
+                            <span id="current-username"></span>
+                            <button onclick="showEditUsernameModal()" class="edit-btn">Edit</button>
+                        </div>
+                    </div>
+                    <div id="edit-username-modal" class="modal">
+                        <div class="modal-content">
+                          <h2>Edit Username</h2>
+                          <div class="form-group">
+                            <label>New Username</label>
+                            <input type="text" id="new-username">
+                          </div>
+                          <div class="modal-actions">
+                            <button class="save-btn" onclick="updateUsername()">Save Changes</button>
+                            <button class="cancel-btn" onclick="closeModal('edit-username-modal')">Cancel</button>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="info-group">
+                        <label>Wallet Address</label>
+                        <div class="info-value" id="profile-wallet">
+                            <span id="wallet-address"></span>
+                            <button class="copy-btn" onclick="copyWalletAddress()">
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                    <div class="info-group">
+                        <label>Account Type</label>
+                        <div class="info-value" id="account-type"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2 id="success-message"></h2>
+            <button onclick="closeModal('success-modal')" class="modal-btn">Close</button>
+        </div>
+    </div>
+
+    <div id="loading-indicator" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.2/web3.min.js"></script>
+    <script src="/js/profile.js"></script>
+</body>
+</html>
